@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Talent Pool Project - Incentives</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="{% static 'resources/css/axure_rp_page.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'data/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'files/talent_pool_project_-_incentives/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <script src="{% static 'resources/scripts/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/axQuery.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/globals.js' %}"></script>
+    <script src="{% static 'resources/scripts/axutils.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/annotation.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/axQuery.std.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/doc.js' %}"></script>
+    <script src="{% static 'resources/scripts/messagecenter.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/events.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/recording.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/action.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/expr.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/geometry.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/flyout.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/model.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/repeater.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/sto.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/utils.temp.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/variables.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/drag.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/move.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/visibility.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/style.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/adaptive.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/tree.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/init.temp.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/legacy.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/viewer.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/math.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'data/document.js' %}"></script>
+    <script src="{% static 'files/talent_pool_project_-_incentives/data.js' %}"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return "{% static 'resources/images/transparent.gif' %}"; };
+      $axure.utils.getOtherPath = function() { return "{% static 'resources/Other.html' %}"; };
+      $axure.utils.getReloadPath = function() { return "{% static 'resources/reload.html' %}"; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Shape) -->
+      <div id="u77" class="ax_default box_3">
+        <img id="u77_img" class="img " src="{% static 'images/new_project_screen1/u40.svg' %}"/>
+        <div id="u77_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u78" class="ax_default box_3">
+        <div id="u78_div" class=""></div>
+        <div id="u78_text" class="text ">
+          {% if user.is_authenticated %}
+          <p><span>Welcome {{user.username}}</span></p>
+          {% else %}                  
+         <p><span>Welcome TCS</span></p>
+          {% endif %}
+        </div>
+      </div>
+<form action="/incentives/" method="post">
+  {% csrf_token %}
+      <!-- Unnamed (Shape) -->
+      <div id="u79" class="ax_default icon">
+        <img id="u79_img" class="img " src="{% static 'images/dashboard_with_all_the_menus/u34.svg' %}"/>
+        <div id="u79_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u80" class="ax_default primary_button">
+        <div id="u80_div" class=""></div>
+        <div id="u80_text" class="text ">
+          <button><span>Submit and Optimize your listing</span></button>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u81" class="ax_default primary_button">
+        <div id="u81_div" class=""></div>
+        <div id="u81_text" class="text ">
+          <a href="/project_skill"><span>Skills Required</span></a>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u82" class="ax_default heading_1">
+        <div id="u82_div" class=""></div>
+        <div id="u82_text" class="text ">
+          <p><span>List out the incentives to be offered as </span></p><p><span>part of your project. Pick atleast two.</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Line) -->
+      <div id="u83" class="ax_default line">
+        <img id="u83_img" class="img " src="{% static 'images/talent_pool_project_-_incentives/u83.svg' %}"/>
+        <div id="u83_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u84" class="ax_default checkbox">
+        <label id="u84_input_label" for="u84_input" style="position: absolute; left: 0px;">
+          <img id="u84_img" class="img " src="{% static 'images/talent_pool_project_-_incentives/u84.svg' %}"/>
+          <div id="u84_text" class="text ">
+            <p><span>Cash Prize</span></p>
+          </div>
+        </label>
+        <input id="u84_input" type="checkbox" value="Cash Prize" name="cash_prize" />
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u85" class="ax_default text_area">
+        <div id="u85_div" class=""></div>
+        <textarea id="u85_input" class="u85_input" name="cash_prize_description"></textarea>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u86" class="ax_default heading_3">
+        <div id="u86_div" class=""></div>
+        <div id="u86_text" class="text ">
+          <p><span>Describe who will get the incentive</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u87" class="ax_default checkbox">
+        <label id="u87_input_label" for="u87_input" style="position: absolute; left: 0px;">
+          <img id="u87_img" class="img " src="{% static 'images/talent_pool_project_-_incentives/u87.svg' %}"/>
+          <div id="u87_text" class="text ">
+            <p><span>Letter of Recommendation</span></p>
+          </div>
+        </label>
+        <input id="u87_input" type="checkbox" name="letter_of_recommendation" value="Letter of Recommendation"/>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u88" class="ax_default text_area">
+        <div id="u88_div" class=""></div>
+        <textarea id="u88_input" class="u88_input" name="letter_of_recommendation_description"></textarea>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u89" class="ax_default checkbox">
+        <label id="u89_input_label" for="u89_input" style="position: absolute; left: 0px;">
+          <img id="u89_img" class="img " src="{% static 'images/talent_pool_project_-_incentives/u89.svg' %}"/>
+          <div id="u89_text" class="text ">
+            <p><span>Internship Opportunity</span></p>
+          </div>
+        </label>
+        <input id="u89_input" type="checkbox" name="internship_opportunity" value="Internship Opportunity"/>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u90" class="ax_default text_area">
+        <div id="u90_div" class=""></div>
+        <textarea id="u90_input" class="u90_input" name="internship_opportunity_description"></textarea>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u91" class="ax_default checkbox">
+        <label id="u91_input_label" for="u91_input" style="position: absolute; left: 0px;">
+          <img id="u91_img" class="img " src="{% static 'images/talent_pool_project_-_incentives/u91.svg' %}"/>
+          <div id="u91_text" class="text ">
+            <p><span>Team Lunch with CEO</span></p>
+          </div>
+        </label>
+        <input id="u91_input" type="checkbox" name="team_lunch_with_ceo" value="Team Lunch with CEO"/>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u92" class="ax_default text_area">
+        <div id="u92_div" class=""></div>
+        <textarea id="u92_input" class="u92_input" name="team_lunch_with_ceo_description"></textarea>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u93" class="ax_default checkbox">
+        <label id="u93_input_label" for="u93_input" style="position: absolute; left: 0px;">
+          <img id="u93_img" class="img " src="{% static 'images/talent_pool_project_-_incentives/u93.svg' %}"/>
+          <div id="u93_text" class="text ">
+            <p><span>Job Opportunity</span></p>
+          </div>
+        </label>
+        <input id="u93_input" type="checkbox" name="job_opportunity" value="Job Opportunity"/>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u94" class="ax_default text_area">
+        <div id="u94_div" class=""></div>
+        <textarea id="u94_input" class="u94_input" name="job_opportunity_description"></textarea>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u95" class="ax_default paragraph">
+        <div id="u95_div" class=""></div>
+        <div id="u95_text" class="text ">
+          <p><span>Ideal for Complex challanges and Individual Projects.</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u96" class="ax_default paragraph">
+        <div id="u96_div" class=""></div>
+        <div id="u96_text" class="text ">
+          <p><span>Must have for all projects. Provide this to top 20 candidates/ 4 teams who finished on time and delivered with best quality.</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u97" class="ax_default paragraph">
+        <div id="u97_div" class=""></div>
+        <div id="u97_text" class="text ">
+          <p><span>Must have for all projects. Provide this to all candidates who finished on time.</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u98" class="ax_default paragraph">
+        <div id="u98_div" class=""></div>
+        <div id="u98_text" class="text ">
+          <p><span>Must have for all projects. Provide this to top 5 candidates/1 team who finished on time and delivered with best quality.</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u99" class="ax_default paragraph">
+        <div id="u99_div" class=""></div>
+        <div id="u99_text" class="text ">
+          <p><span>Great way to meet the best candidates and create your talent pool and a great brand.</span></p>
+        </div>
+      </div>
+    </form>
+    </div>
+    <script src="{% static 'resources/scripts/axure/ios.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Talent Pool Project - Project Details</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="{% static 'resources/css/axure_rp_page.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'data/styles.css" type="text/css' %}" rel="stylesheet"/>
+    <link href="{% static 'files/talent_pool_project_-_project_details/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <script src="{% static 'resources/scripts/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/axQuery.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/globals.js' %}"></script>
+    <script src="{% static 'resources/scripts/axutils.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/annotation.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/axQuery.std.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/doc.js' %}"></script>
+    <script src="{% static 'resources/scripts/messagecenter.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/events.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/recording.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/action.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/expr.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/geometry.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/flyout.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/model.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/repeater.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/sto.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/utils.temp.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/variables.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/drag.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/move.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/visibility.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/style.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/adaptive.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/tree.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/init.temp.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/legacy.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/viewer.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/math.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'data/document.js"></script>
+    <script src="{% static 'files/talent_pool_project_-_project_details/data.js' %}"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return "{% static 'resources/images/transparent.gif' %}"; };
+      $axure.utils.getOtherPath = function() { return "{% static 'resources/Other.html' %}"; };
+      $axure.utils.getReloadPath = function() { return "{% static 'resources/reload.html' %}"; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Shape) -->
+      <div id="u45" class="ax_default box_3">
+        <img id="u45_img" class="img " src="{% static 'images/new_project_screen1/u40.svg' %}"/>
+        <div id="u45_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u46" class="ax_default box_3">
+        <div id="u46_div" class=""></div>
+        <div id="u46_text" class="text ">
+          {% if user.is_authenticated %}
+          <p><span>Welcome {{user.username}}</span></p>
+          {% else %}                  
+         <p><span>Welcome TCS</span></p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u47" class="ax_default icon">
+        <img id="u47_img" class="img " src="{% static 'images/dashboard_with_all_the_menus/u34.svg' %}"/>
+        <div id="u47_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+<form action="/project_detail/" method="post">
+  {% csrf_token %}
+      <!-- Unnamed (Rectangle) -->
+      <div id="u48" class="ax_default primary_button">
+        <div id="u48_div" class=""></div>
+        <div id="u48_text" class="text ">
+          <button><span>Submit and Go To SKills Required</span><button></button>
+        </div>
+      </div>
+
+      <!-- Unnamed (Text Field) -->
+      <div id="u49" class="ax_default text_field">
+        <div id="u49_div" class=""></div>
+        <input id="u49_input" type="text" name="project_title" value="" class="u49_input"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u50" class="ax_default label">
+        <div id="u50_div" class=""></div>
+        <div id="u50_text" class="text ">
+          <p><span>PROJECT TITLE</span></p>
+        </div>
+      </div>
+
+      <!-- Radio Button Group (Group) -->
+      <div id="u51" class="ax_default" data-label="Radio Button Group" data-left="338" data-top="174" data-width="348" data-height="16">
+
+        <!-- Option 1 (Radio Button) -->
+        <div id="u52" class="ax_default radio_button" data-label="Option 1" selectiongroup="my options">
+          <label id="u52_input_label" for="u52_input" style="position: absolute; left: 0px;">
+            <img id="u52_img" class="img " src="{% static 'images/talent_pool_project_-_project_details/option_1_u52.svg' %}"/>
+            <div id="u52_text" class="text ">
+              <p><span>TEAM</span></p>
+            </div>
+          </label>
+          <input id="u52_input" type="radio" value="TEAM" name="project_type"/>
+        </div>
+
+        <!-- Option 2 (Radio Button) -->
+        <div id="u53" class="ax_default radio_button selected" data-label="Option 2" selectiongroup="my options">
+          <label id="u53_input_label" for="u53_input" style="position: absolute; left: 0px;">
+            <img id="u53_img" class="img " src="{% static 'images/talent_pool_project_-_project_details/option_2_u53_selected.svg' %}"/>
+            <div id="u53_text" class="text ">
+              <p><span>INDIVIDUAL</span></p>
+            </div>
+          </label>
+          <input id="u53_input" type="radio" value="INDIVIDUAL" name="project_type"/>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u54" class="ax_default label">
+        <div id="u54_div" class=""></div>
+        <div id="u54_text" class="text ">
+          <p><span>PROJECT TYPE</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u55" class="ax_default label">
+        <div id="u55_div" class=""></div>
+        <div id="u55_text" class="text ">
+          <p><span>DEADLINE DATE</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Text Field) -->
+      <div id="u56" class="ax_default text_field">
+        <div id="u56_div" class=""></div>
+        <input id="u56_input" type="date" value="" name="deadline_date" class="u56_input"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u57" class="ax_default label">
+        <div id="u57_div" class=""></div>
+        <div id="u57_text" class="text ">
+          <p><span>DESCRIPTION</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u58" class="ax_default text_area">
+        <div id="u58_div" class=""></div>
+        <textarea id="u58_input" class="u58_input" name="description"></textarea>
+      </div>
+
+      <!-- Unnamed (Droplist) -->
+      <div id="u59" class="ax_default droplist">
+        <div id="u59_div" class=""></div>
+        <select id="u59_input" class="u59_input" name="choose_template">
+          <option class="u59_input_option" value="Choose from one of the Templates">Choose from one of the Templates</option>
+          <option class="u59_input_option" value="Software Development Template">Software Development Template</option>
+          <option class="u59_input_option" value="EdTech Sales Template">EdTech Sales Template</option>
+          <option class="u59_input_option" value="Data Analysis Template">Data Analysis Template</option>
+          <option class="u59_input_option" value="Digital Marketing Template">Digital Marketing Template</option>
+          <option class="u59_input_option" value="Software Sales Template">Software Sales Template</option>
+          <option class="u59_input_option" value="App Development Template">App Development Template</option>
+          <option class="u59_input_option" value="Market Research for a new Startup Template">Market Research for a new Startup Template</option>
+        </select>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u60" class="ax_default primary_button">
+        <div id="u60_div" class=""></div>
+        <div id="u60_text" class="text ">
+          <p><span>Find me a Template</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u61" class="ax_default box_1">
+        <div id="u61_div" class=""></div>
+        <div id="u61_text" class="text ">
+          <p><span>Trouble Finding a Template that fits your Project Perfectly? </span></p><p><span>No worries!! Try our advanced search to find you the&nbsp; best template</span></p>
+        </div>
+      </div>
+    </form>
+    </div>
+    <script src="{% static 'resources/scripts/axure/ios.js' %}"></script>
+  </body>
+</html>

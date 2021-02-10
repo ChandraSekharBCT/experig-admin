@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Talent Pool Project - Skills Required</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <!-- <link href="{% static 'resources/css/axure_rp_page.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'data/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'files/talent_pool_project_-_skills_required/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <script src="{% static 'resources/scripts/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/axQuery.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/globals.js' %}"></script>
+    <script src="{% static 'resources/scripts/axutils.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/annotation.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/axQuery.std.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/doc.js' %}"></script>
+    <script src="{% static 'resources/scripts/messagecenter.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/events.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/recording.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/action.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/expr.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/geometry.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/flyout.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/model.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/repeater.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/sto.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/utils.temp.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/variables.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/drag.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/move.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/visibility.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/style.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/adaptive.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/tree.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/init.temp.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/legacy.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/viewer.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/math.js' %}"></script>
+    <script src="{% static 'resources/scripts/axure/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'data/document.js' %}"></script>
+    <script src="{% static 'files/talent_pool_project_-_skills_required/data.js' %}"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return "{% static 'resources/images/transparent.gif' %}"; };
+      $axure.utils.getOtherPath = function() { return "{% static 'resources/Other.html' %}"; };
+      $axure.utils.getReloadPath = function() { return "{% static 'resources/reload.html' %}"; };
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <script src="{% static 'jquery.tagsinput-revisited.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'jquery.tagsinput-revisited.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      
+      body {
+        min-height: 100%;
+        font-family: sans-serif;
+        padding: 20px;
+        margin: 0;
+      }
+      
+      label {
+        display: block;
+        padding: 20px 0 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <div class="collapse navbar-collapse" id="navbarText">
+    
+    <span class="navbar-text" style="margin-left: 1000px;">
+     {% if user.is_authenticated %}
+          Welcome {{user.username}}
+          {% else %}                  
+         Welcome TCS
+          {% endif %}
+    </span>
+  </div>
+</nav>
+   <!--  <div id="base" class=""> -->
+
+      <!-- Unnamed (Shape) -->
+      <!-- <div id="u62" class="ax_default box_3">
+        <img id="u62_img" class="img " src="{% static 'images/new_project_screen1/u40.svg' %}"/>
+        <div id="u62_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+ -->
+      <!-- Unnamed (Rectangle) -->
+      <!-- <div id="u63" class="ax_default box_3">
+        <div id="u63_div" class=""></div>
+        <div id="u63_text" class="text ">
+          {% if user.is_authenticated %}
+          <p><span>Welcome {{user.username}}</span></p>
+          {% else %}                  
+         <p><span>Welcome TCS</span></p>
+          {% endif %}
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Shape) -->
+      <!-- <div id="u64" class="ax_default icon">
+        <img id="u64_img" class="img " src="{% static 'images/dashboard_with_all_the_menus/u34.svg' %}"/>
+        <div id="u64_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+      <form> -->
+
+      <!-- Unnamed (Rectangle) -->
+      <!-- <div id="u65" class="ax_default primary_button">
+        <div id="u65_div" class=""></div>
+        <div id="u65_text" class="text ">
+          <p><span>Incentives</span></p>
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Text Field) -->
+      <!-- <div id="u66" class="ax_default text_field">
+        <div id="u66_div" class=""></div>
+        <label>Tags input with autocomplete:</label>
+      <input id="form-tags-4" name="tags-4" type="text" value="">
+      </div>
+ -->
+      <!-- Unnamed (Rectangle) -->
+      <!-- <div id="u67" class="ax_default label">
+        <div id="u67_div" class=""></div>
+        <div id="u67_text" class="text ">
+          <p><span>SKILLS REQUIRED</span></p>
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Line) -->
+      <!-- <div id="u68" class="ax_default line">
+        <img id="u68_img" class="img " src="{% static 'images/talent_pool_project_-_skills_required/u68.svg' %}"/>
+        <div id="u68_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Shape) -->
+      <!-- <div id="u69" class="ax_default primary_button">
+        <img id="u69_img" class="img " src="{% static 'images/talent_pool_project_-_skills_required/u69.svg' %}"/>
+        <div id="u69_text" class="text ">
+          <p><span>Flutter</span></p>
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Shape) -->
+      <!-- <div id="u70" class="ax_default primary_button">
+        <img id="u70_img" class="img " src="{% static 'images/talent_pool_project_-_skills_required/u69.svg' %}"/>
+        <div id="u70_text" class="text ">
+          <p><span>IOS Development</span></p>
+        </div>
+      </div> -->
+
+      <!-- Radio Button Group (Group) -->
+      <!-- <div id="u71" class="ax_default" data-label="Radio Button Group" data-left="182" data-top="270" data-width="710" data-height="145"> -->
+
+        <!-- Header (Rectangle) -->
+        <!-- <div id="u72" class="ax_default heading_3" data-label="Header">
+          <div id="u72_div" class=""></div>
+          <div id="u72_text" class="text ">
+            <p><span>Would you like an NDA to be signed?&nbsp; (Only for team based projects with a Mentor)</span></p>
+          </div>
+        </div>
+ -->
+        <!-- Option 1 (Radio Button) -->
+        <!-- <div id="u73" class="ax_default radio_button selected" data-label="Option 1" selectiongroup="my options">
+          <label id="u73_input_label" for="u73_input" style="position: absolute; left: 0px;">
+            <img id="u73_img" class="img " src="{% static 'images/talent_pool_project_-_skills_required/option_1_u73_selected.svg' %}"/>
+            <div id="u73_text" class="text ">
+              <p><span>YES</span></p>
+            </div>
+          </label>
+          <input id="u73_input" type="radio" value="radio" name="my options"/>
+        </div> -->
+
+        <!-- Option 2 (Radio Button) -->
+        <!-- <div id="u74" class="ax_default radio_button" data-label="Option 2" selectiongroup="my options">
+          <label id="u74_input_label" for="u74_input" style="position: absolute; left: 0px;">
+            <img id="u74_img" class="img " src="{% static 'images/talent_pool_project_-_skills_required/option_2_u74.svg' %}"/>
+            <div id="u74_text" class="text ">
+              <p><span>NO</span></p>
+            </div>
+          </label>
+          <input id="u74_input" type="radio" value="radio" name="my options"/>
+        </div> -->
+
+        <!-- Option 3 (Radio Button) -->
+        <!-- <div id="u75" class="ax_default radio_button" data-label="Option 3" selectiongroup="my options">
+          <label id="u75_input_label" for="u75_input" style="position: absolute; left: 0px;">
+            <img id="u75_img" class="img " src="{% static 'images/talent_pool_project_-_skills_required/option_3_u75.svg' %}"/>
+            <div id="u75_text" class="text ">
+              <p><span>Not Sure, Can decide on this after talking to the Mentor.</span></p>
+            </div>
+          </label>
+          <input id="u75_input" type="radio" value="radio" name="my options"/>
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Rectangle) -->
+     <!--  <div id="u76" class="ax_default primary_button">
+        <div id="u76_div" class=""></div>
+        <div id="u76_text" class="text ">
+          <p><span>Project Details</span></p>
+        </div>
+      </div>
+    </form>
+    </div> -->
+<div align="center">
+<form id="form" action="/project_skill/" method="post">
+    {% csrf_token %}
+      
+      <label>SKILLS REQUIRED:</label>
+      <input id="form-tags-4" name="skill" type="text" value="">
+  <h4>Would you like an NDA to be signed?&nbsp; (Only for team based projects with a Mentor)</h4>
+  <input type="radio" id="YES" name="nda" value="YES">
+  <label for="YES">YES</label><br>
+  <input type="radio" id="NO" name="nda" value="NO">
+  <label for="NO">NO</label><br>
+  <input type="radio" id="Not Sure" name="nda" value="Not Sure">
+  <label for="Not Sure">Not Sure, Can decide on this after talking to the Mentor</label>
+  <div class="row">
+    <div class="col-sm-6">
+      <a href="/project_detail" class="btn btn-primary">Project Details</a>
+      
+    </div>
+    <div class="col-sm-6">
+      <button class="btn btn-primary">Submit and Go To Incentives</button>
+      
+    </div>
+    
+  </div>
+    </form>
+</div>
+
+
+
+    <script type="text/javascript">
+      $(function() {
+        $('#form-tags-1').tagsInput();
+        
+        $('#form-tags-2').tagsInput({
+          'onAddTag': function(input, value) {
+            console.log('tag added', input, value);
+          },
+          'onRemoveTag': function(input, value) {
+            console.log('tag removed', input, value);
+          },
+          'onChange': function(input, value) {
+            console.log('change triggered', input, value);
+          }
+        });
+        
+        $('#form-tags-3').tagsInput({
+          'unique': true,
+          'minChars': 2,
+          'maxChars': 10,
+          'limit': 5,
+          'validationPattern': new RegExp('^[a-zA-Z]+$')
+        });
+        
+        $('#form-tags-4').tagsInput({
+          'autocomplete': {
+            source: [
+              'apple',
+              'banana',
+              'orange',
+              'pizza'
+            ]
+          } 
+        });
+        
+        $('#form-tags-5').tagsInput({
+          'delimiter': ';' 
+        });
+        
+        $('#form-tags-6').tagsInput({
+          'delimiter': [',', ';'] 
+        });
+      });
+    </script>
+    <script src="{% static 'resources/scripts/axure/ios.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,787 @@
+{% extends 'header.html' %}
+
+{% block body %}
+<br>
+ <style type="text/css">
+      .container1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container1 input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container1 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container1 .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+    </style>
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 200%
+}
+
+p {
+    color: grey
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #673AB7;
+    font-weight: normal
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+#msform input:focus,
+#msform select:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #673AB7;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #673AB7;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #311B92
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #673AB7;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color: #673AB7;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #673AB7
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f13e"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #673AB7
+}
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    background-color: #673AB7
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+</style>
+
+ 
+
+
+<div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <nav class="nav navbar-nav">
+                <ul class=" navbar-right">
+                  <li class="nav-item dropdown open" style="padding-left: 15px;">
+                    {% if user.is_authenticated %}
+                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                      <img src="images/img.jpg" alt="">{{user.username}}
+                    </a>
+                {% else %}
+                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                      <img src="images/img.jpg" alt="">John Doe
+                    </a>
+                {% endif %}
+                    
+                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                        <a class="dropdown-item"  href="javascript:;">
+                          <span class="badge bg-red pull-right">50%</span>
+                          <span>Settings</span>
+                        </a>
+                    <a class="dropdown-item"  href="javascript:;">Help</a>
+                      <a class="dropdown-item"  href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    </div>
+                  </li>
+  
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="badge bg-green">6</span>
+                    </a>
+                    <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <div class="text-center">
+                          <a class="dropdown-item">
+                            <strong>See All Alerts</strong>
+                            <i class="fa fa-angle-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Create Project</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+ 
+
+<div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                        <form id="msform" method="post" action="/create_project/">
+                            {% csrf_token %}
+                            
+                            {% for message in messages%}
+                            <h3 align="center" style="color: red;">{{message}}</h3>
+                            
+                            <a href="/project_detail_preview/{{data.id}}" class="btn btn-primary">GO TO Preview</a>
+                            
+                            {% endfor %}
+                            <ul id="progressbar">
+                                <li class="active" id="account"><strong>Project Detail</strong></li>
+                                <li id="personal"><strong>Skills Required</strong></li>
+                                <li id="payment"><strong>Incentives</strong></li>
+                                <li id="confirm"><strong>Plan</strong></li>
+                            </ul>
+
+                            
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div> <br>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Project Detail:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 1 - 4</h2>
+                                        </div>
+                                    </div> 
+                                    <label class="fieldlabels">PROJECT TITLE : *</label>
+                                    <input type="text" name="project_title" placeholder="Project Title" />
+                                    <label class="fieldlabels">PROJECT TYPE : *</label> 
+                                    <div class="row">
+                                        <div class="col-sm-6">                                        
+                                    <label class="container1">TEAM
+                                    <input type="radio" checked="checked" name="project_type" value="TEAM">
+                                      <span class="checkmark"></span>
+                                      </label>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <label class="container1">INDIVIDUAL
+                                    <input type="radio" name="project_type" value="INDIVIDUAL">
+                                    <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <label class="fieldlabels">DEADLINE DATE : *</label>
+                                <input type="date" name="deadline_date" placeholder="DeadLine Date" />
+                                <select name="choose_template" class="form-select" aria-label="Default select example">
+                                  <option selected disabled>Choose from one of the Templates</option>
+                                  <option value="Software Development Template">Software Development Template</option>
+                                  <option value="EdTech Sales Template">EdTech Sales Template</option>
+                                  <option value="Data Analysis Template">Data Analysis Template</option>
+                                  <option value="Digital Marketing Template">Digital Marketing Template</option>
+                                  <option value="Software Sales Template">Software Sales Template</option>
+                                  <option value="App Development Template">App Development Template</option>
+                                  <option value="Market Research for a new Startup Template">Market Research for a new Startup Template</option>
+                                </select><br>
+                                <label class="fieldlabels">DESCRIPTION : *</label>
+                                <textarea cols="30" required="10" name="description"></textarea>
+                                </div> <input type="button" name="next" class="next action-button" value="Next" />
+
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Talent Pool Project - Skills Required:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 2 - 4</h2>
+                                        </div>
+                                    </div> 
+                                    <label class="fieldlabels">SKILLS REQUIRED: *</label> 
+                                    <input id="form-tags-4" name="skill" type="text" value="">
+                                    <label class="fieldlabels">Would you like an NDA to be signed?&nbsp; (Only for team based projects with a Mentor) : *</label> 
+                                       
+                                    <label class="container1">YES
+                                    <input type="radio" checked="checked" name="nda" value="Yes">
+                                      <span class="checkmark"></span>
+                                      </label>
+                                    <label class="container1">NO
+                                    <input type="radio" name="nda" value="No">
+                                    <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container1">Not Sure
+                                    <input type="radio" name="nda" value="Not Sure">
+                                    <span class="checkmark"></span>
+                                    </label>
+                                </div> 
+                                <input type="button" name="next" class="next action-button" value="Next" /> 
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Incentives:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 3 - 4</h2>
+                                        </div>
+                                    </div> 
+                                    <h4>List out the incentives to be offered as part of your project. Pick atleast two.</h4><hr>
+                                   
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            
+                                            <label class="container1">Cash Prize
+                                                <input type="checkbox" name="cash_prize" value="Cash Prize">
+                                                <span class="checkmark"></span><br>
+                                                <small>Ideal for Complex challanges and Individual Projects.</small>
+                                            </label>
+                                        
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <textarea cols="20" rows="5" name="cash_prize_description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label class="container1">Letter of Recommendation
+                                                <input type="checkbox" name="letter_of_recommendation" value="Letter of Recommendation">
+                                                <span class="checkmark"></span><br>
+                                                <small>Must have for all projects. Provide this to all candidates who finished on time.
+                                                </small>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <textarea cols="20" rows="5" name="letter_of_recommendation_description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label class="container1">Internship Opportunity
+                                                <input type="checkbox" name="internsip_opportunity" value="Internship Opportunity">
+                                                <span class="checkmark"></span><br>
+                                                <small>Must have for all projects. Provide this to top 20 candidates/ 4 teams who finished on time and delivered with best quality.</small>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <textarea cols="20" rows="5" name="internsip_opportunity_description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                           <label class="container1">Job Opportunity
+                                                <input type="checkbox" name="job_opportunity" value="Job Opportunity">
+                                                <span class="checkmark"></span><br>
+                                                <small>Must have for all projects. Provide this to top 5 candidates/1 team who finished on time and delivered with best quality.</small>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <textarea cols="20" rows="5" name="job_opportunity_description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label class="container1">Team Lunch with CEO
+                                                <input type="checkbox" name="team_lunch_with_ceo" value="Team Lunch with CEO">
+                                                <span class="checkmark"></span><br>
+                                                <small>Great way to meet the best candidates and create your talent pool and a great brand.</small>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <textarea cols="20" rows="5" name="team_lunch_with_ceo_description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>  <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Optimize Project Visibility:</h2>
+                                            <p align="center">Choose one of the following plans</p>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 4 - 4</h2>
+                                        </div>
+                                    </div> <br><br>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                          <div class="card" style="width: 18rem;">
+                                               <div class="card-body">
+                                                <h2>Basic Plan</h2>
+                                       <ul>
+                                      <li>Only teams/individuals contacted directly can work on your project.</li>
+                                     <li>Contact information of all Talent Pool build through your project would be available at the end of the project.</li>
+                                     <li>You can meet all mentors regularly to discuss your project requirements.</li>
+                                  <li>Ranking of candidates who worked on your project at the end of the project.</li>
+
+                                     </ul><br><br><br><br><br>
+                                   <label class="container1">Click to Select
+                                    <input type="radio" checked="checked" name="plan" value="Basic Plan">
+                                      <span class="checkmark"></span>
+                                      </label>
+                                
+                                 </div>
+                              </div>  
+                                        </div>
+                                        <div class="col-sm-6">
+                                             <div class="card" style="width: 18rem;">
+                                               <div class="card-body">
+                                                <h2>PREMIUM PLAN</h2>
+                                       <ul>
+                                      <li>Your project would be a public project. Any number of teams can work on your project.</li>
+                                     <li>Project would be guaranteed to finish in the specified period.</li>
+                                     <li>Access to talent pool contacts from the very start.</li>
+                                  <li>Weekly ranking of talent pool.</li>
+                                  <li>Comparison analytics of all teams working on your project.</li>
+                                  <li>You can hire a dedicated mentor who can keep track of all teams working on your project.</li>
+                                  <li>Billing won't start untill your project gets picked.</li>
+
+                                     </ul>
+                                   <label class="container1">Click to Select
+                                    <input type="radio" name="plan" value="PREMIUM PLAN">
+                                      <span class="checkmark"></span>
+                                      </label>
+                                 </div>
+                              </div>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <button class="btn btn-primary">Submit</button>
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+var current = 1;
+var steps = $("fieldset").length;
+
+setProgressBar(current);
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(++current);
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(--current);
+});
+
+function setProgressBar(curStep){
+var percent = parseFloat(100 / steps) * curStep;
+percent = percent.toFixed();
+$(".progress-bar")
+.css("width",percent+"%")
+}
+
+$(".submit").click(function(){
+return false;
+})
+
+});
+</script>
+ <script type="text/javascript">
+      $(function() {
+        $('#form-tags-1').tagsInput();
+        
+        $('#form-tags-2').tagsInput({
+          'onAddTag': function(input, value) {
+            console.log('tag added', input, value);
+          },
+          'onRemoveTag': function(input, value) {
+            console.log('tag removed', input, value);
+          },
+          'onChange': function(input, value) {
+            console.log('change triggered', input, value);
+          }
+        });
+        
+        $('#form-tags-3').tagsInput({
+          'unique': true,
+          'minChars': 2,
+          'maxChars': 10,
+          'limit': 5,
+          'validationPattern': new RegExp('^[a-zA-Z]+$')
+        });
+        
+        $('#form-tags-4').tagsInput({
+          'autocomplete': {
+            source: [
+              'apple',
+              'banana',
+              'orange',
+              'pizza'
+            ]
+          } 
+        });
+        
+        $('#form-tags-5').tagsInput({
+          'delimiter': ';' 
+        });
+        
+        $('#form-tags-6').tagsInput({
+          'delimiter': [',', ';'] 
+        });
+      });
+    </script>
+     
+
+{% endblock %}
